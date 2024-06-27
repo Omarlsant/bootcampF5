@@ -7,41 +7,64 @@
     <title>Portfolio</title>
 </head>
 <body>
-    <section class="botones">
-        <div class="boton-solo">
-            <button>OMAR ANTONIO LENGUA SUÁREZ</button>
-        </div>
-        <div class="grupo-botones">
-            <button>Mis Proyectos</button>
-            <button>Sobre mí</button>
-            <button>Contacto</button>
-        </div>
-    </section>
-    <section class="cabecera">
-        <header>
-            <section>
+    <header>
+        <button>OMAR ANTONIO LENGUA SUÁREZ</button>
+        <button>Mis Proyectos</button>
+        <button>Sobre mí</button>
+        <button>Contacto</button>
+    </header>
+    <main>
+        <section class="presentation">
+            <h1>¡HOLA! SOY OMAR ANTONIO LENGUA SUÁREZ</h1>
+            <p>Soy desarrollador web fullstack, apasionado por crear soluciones digitales efectivas y visualmente atractivas</p>
+            <button>CONTACTO</button>
+            <label for="">
+            <button>linkedin</button>
+            </label> 
+            <label for="">
+            <button>github</button>
+            </label>
+            <img src="./assets/fotoCurso.jpg" alt="profile-photo">
+        </section>
+        <section class="projects">
+            <h2>Mis Proyectos</h2>
+            <p>Écha un vistazo a los proyectos que he desarrollado en base a mi pasión por la programación</p>
+            <div>
+                <img src="./assets/capipepo.webp" alt="mokepon-capipepo">
+                <h3>Platzi - Juego MOKEPON!</h3>
+                <p>Para este proyecto he utilizado: Html, Css y Javascript</p>
+                <button><a href="_blank" target="_blank"></a> Github</button>
+            </div>
+            <div>
+                <img src="./assets/fcc.png" alt="mokepon-capipepo">
+                <h3>Ejercicios de FreeCodeCamp</h3>
+                <p>Para este proyecto he utilizado: Html, Css y Javascript</p>
+                <button><a href="_blank" target="_blank"></a> Github</button>
+            </div>
+            <section class="about-me">
+                <h2>SOBRE MÍ</h2>
+                <div>
+                    <p>Soy Desarrollador Web  Full Stack, residente en Madrid</p>
+                    <p>Soy un profesional en Administración con un firme compromiso ético y una adaptabilidad excepcional a los desafíos. Mi enfoque proactivo hacia el aprendizaje continuo me ha llevado a la autodidacta exploración de la programación, complementada con la formación práctica del bootcamp de F5 en colaboración con la Fundación Orange. Estas experiencias me han equipado con habilidades técnicas y una perspectiva innovadora para enfrentar con confianza los retos del sector tecnológico</p>
+                </div>
 
             </section>
-            <section class="botones">
-                
-            </section>
+
+        </section>
+        <section class="formula">
+            <h2>CONECTEMOS</h2>
+            <p>Escríbeme <a href="mailto:omarns21@gmail.com?subject=Asunto&body=Texto">aquí</a>:</p>
+            <form action="">
+                <input type="text" placeholder="Nombre y Apellidos">
+                <input type="email" placeholder="Correo electrónico">
+                <input type="text" placeholder="Asunto">
+                <input type="text" placeholder="Mensaje">
+                <input type="submit" class="btn" value="enviar">
+            </form>
+
+        </section>
         
-            <div class="info">
-                <div class="texto">
-                    <h1>¡Hola! Soy OMAR ANTONIO LENGUA SUÁREZ</h1>
-                    <p>Soy Desarrollador Web Full Stack Junior,  apasionado por crear soluciones digitales efectivas y visualmente atractivas.</p>                    
-                </div>                
-                <div class="foto">
-                    <img src="./assets/fotoCurso.jpg" alt="">
-                </div>
-            </div>
-        </header>
-    </section>
-    <section>
-        <div>
-            <h2>MIS PROYECTOS</h2>
-            <p>Echa un vistazo aquí  a proyectos s que he seleccionado para enseñar mi pasión por el desarrollo  front-end.</p>
-        </div>
-    </section>    
+    </main>
+    <footer></footer>   
 </body>
 </html>
