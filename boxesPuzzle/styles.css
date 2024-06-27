@@ -1,29 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 body {
-    background-image: url(https://images.pexels.com/photos/4691599/pexels-photo-4691599.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;    
+    background-color: white;
+    width: auto;
+    height: auto;
+}
+
+details > summary {
+    list-style: none;
+}
+
+details > summary:before {
+    content: '▶';
+    padding-right: 5px;
+    font-size: 20px;
+    -webkit-text-stroke: 1px black;
+}
+
+details[open] > summary:before {
+    content: '▼';
 }
 
 .title {
     font-family: "Bebas Neue", sans-serif;
-    -webkit-text-stroke: 1px black;
     letter-spacing: 2px;
     font-size: 60px;
-    color: white;
+    color: black;
     text-align: center;
     border-bottom: 2px solid black;
 }
 
 .det summary {
     font-family: "Bebas Neue", sans-serif;
-    -webkit-text-stroke: 1px black;
     font-size: 30px;
     letter-spacing: 2px;
-    padding: 2px;
-    color: white;
+    padding: 20px;
+    padding-left: 15%;
+    color: black;
 }
 
 .container {
@@ -31,6 +44,7 @@ body {
     position: relative;
     height: 500px;
     width: 500px;
+    left: 20px;
 }
 
 .box {
@@ -82,23 +96,23 @@ body {
     left: 200px;
 }
 
-.blue4 {
+.b4 {
     bottom: 0;
     right: -100px;
     
 }
 
-.red4 {
+.r4 {
     bottom: -100px;
     right: -100;    
 }
 
-.green4 {
+.g4 {
     top: 0;
     right: -100px;    
 }
 
-.pink4 {
+.p4 {
     bottom: -100px;
     right: 0px;
 }
