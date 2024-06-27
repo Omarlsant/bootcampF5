@@ -1,0 +1,112 @@
+.container {
+    background-color: black;
+    position: relative;
+    height: 500px;
+    width: 500px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+
+.blue1 {
+    background-color: blue;
+    top: 0;
+    left: 0;    
+}
+
+.red1 {
+    background-color: red;
+    top: 0;
+    right: 0;    
+}
+
+.green1 {
+    background-color: green;
+    top: 100px;
+    left: 200px;   
+}
+
+.pink1 {
+    background-color: pink;
+    top: 200px;
+    left: 200px;
+}
+
+.blue2 {
+    background-color: blue;
+    bottom: 0;
+    right: 0;
+}
+
+.red2 {
+    background-color: red;
+    bottom: 0;
+    left: 0;   
+}
+
+.green2 {
+    background-color: green;
+    top: 0;
+    right: 0; 
+}
+
+.pink2 {
+    background-color: pink;
+    top: 0;
+    left: 0;
+}
+
+.blue3 {
+    background-color: blue;
+    top: 0;
+    left: 0;
+    
+}
+
+.red3 {
+    background-color: red;
+    top: 0;
+    right: 0;  
+}
+
+.green3 {
+    background-color: green;
+    bottom: 0;
+    left: 0;
+}
+
+.pink3 {
+    background-color: pink;
+    bottom: 0;
+    right: 0;
+}
+
+.blue4 {
+    background-color: blue;
+    bottom: 0;
+    right: -100px;
+    
+}
+
+.red4 {
+    background-color: red;
+    bottom: -100px;
+    right: -100;    
+}
+
+.green4 {
+    background-color: green;
+    top: 0;
+    right: -100px;    
+}
+
+.pink4 {
+    background-color: pink;
+    bottom: -100px;
+    right: 0px;
+}
+
+
