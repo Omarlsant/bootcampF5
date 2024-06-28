@@ -3,3 +3,25 @@
 body {
     background-color: #202A64;
 }
+
+.container h1, h2, h3 {
+    font-family: "Bebas Neue", sans-serif;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.container img {
+    width: 250px;
+    height: 250px;
+}
+
+.head a {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+
+.container p {
+    color: white;
+}

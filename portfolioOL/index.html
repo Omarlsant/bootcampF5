@@ -7,26 +7,24 @@
     <title>Portfolio</title>
 </head>
 <body>
-    <header>
-        <button>OMAR ANTONIO LENGUA SUÁREZ</button>
-        <button>Mis Proyectos</button>
-        <button>Sobre mí</button>
-        <button>Contacto</button>
+    <header class="container head">
+        <nav>
+            <a href="#home">OMAR ANTONIO LENGUA SUÁREZ</a>
+            <a href="#projects">Mis proyectos</a>
+            <a href="#about">Sobre mí</a>
+            <a href="#contact">Contacto</a>
+        </nav>
     </header>
     <main>
-        <section class="presentation">
+        <section class="container presentation">
             <h1>¡HOLA! SOY OMAR ANTONIO LENGUA SUÁREZ</h1>
             <p>Soy desarrollador web fullstack, apasionado por crear soluciones digitales efectivas y visualmente atractivas</p>
-            <button>CONTACTO</button>
-            <label for="">
-            <button>linkedin</button>
-            </label> 
-            <label for="">
-            <button>github</button>
-            </label>
+            <a href="#contact"><button>CONTACTO</button></a>
+            <a href="https://www.linkedin.com/in/omar-antonio-lengua-suárez"><button>linkedin</button></a>
+            <a href="https://github.com/omar-antonio-lengua-suárez"><button>github</button></a>
             <img src="./assets/fotoCurso.jpg" alt="profile-photo">
         </section>
-        <section class="projects">
+        <section class=" container projects">
             <h2>Mis Proyectos</h2>
             <p>Écha un vistazo a los proyectos que he desarrollado en base a mi pasión por la programación</p>
             <div>
@@ -39,19 +37,17 @@
                 <img src="./assets/fcc.png" alt="mokepon-capipepo">
                 <h3>Ejercicios de FreeCodeCamp</h3>
                 <p>Para este proyecto he utilizado: Html, Css y Javascript</p>
-                <button><a href="_blank" target="_blank"></a> Github</button>
+                <a href="https://github.com/omar-antonio-lengua-suárez/freecodecamp" target="_blank"><button>Github</button></a>
             </div>
-            <section class="about-me">
-                <h2>SOBRE MÍ</h2>
-                <div>
-                    <p>Soy Desarrollador Web  Full Stack, residente en Madrid</p>
-                    <p>Soy un profesional en Administración con un firme compromiso ético y una adaptabilidad excepcional a los desafíos. Mi enfoque proactivo hacia el aprendizaje continuo me ha llevado a la autodidacta exploración de la programación, complementada con la formación práctica del bootcamp de F5 en colaboración con la Fundación Orange. Estas experiencias me han equipado con habilidades técnicas y una perspectiva innovadora para enfrentar con confianza los retos del sector tecnológico</p>
-                </div>
-
-            </section>
-
         </section>
-        <section class="formula">
+        <section class="container about-me">
+            <h2>SOBRE MÍ</h2>
+            <div>
+                <p>Soy Desarrollador Web  Full Stack, residente en Madrid</p>
+                <p>Soy un profesional en Administración con un firme compromiso ético y una adaptabilidad excepcional a los desafíos. Mi enfoque proactivo hacia el aprendizaje continuo me ha llevado a la autodidacta exploración de la programación, complementada con la formación práctica del bootcamp de F5 en colaboración con la Fundación Orange. Estas experiencias me han equipado con habilidades técnicas y una perspectiva innovadora para enfrentar con confianza los retos del sector tecnológico</p>
+                </div>
+        </section>
+        <section class="container formula">
             <h2>CONECTEMOS</h2>
             <p>Escríbeme <a href="mailto:omarns21@gmail.com?subject=Asunto&body=Texto">aquí</a>:</p>
             <form action="">
@@ -61,10 +57,12 @@
                 <input type="text" placeholder="Mensaje">
                 <input type="submit" class="btn" value="enviar">
             </form>
-
         </section>
-        
     </main>
-    <footer></footer>   
+    <footer>
+        <section class="container end">
+            <p>© 2024 Omar Lengua Suárez</p>
+        </section>
+    </footer>   
 </body>
 </html>
