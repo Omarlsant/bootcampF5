@@ -4,24 +4,74 @@ body {
     background-color: #202A64;
 }
 
+.container.head nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container.head nav a[href="#home"] {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.container.head nav a {
+    margin-right: 25px;
+}
+
+.container.head nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .container h1, h2, h3 {
     font-family: "Bebas Neue", sans-serif;
     color: white;
-    letter-spacing: 1px;
+    letter-spacing: 1.1px;
 }
 
 .container img {
     width: 250px;
-    height: 250px;
+    height: 350px;
+}
+
+.container p {
+    font-family: "Open Sans", sans-serif;
 }
 
 .head a {
     font-family: "Bebas Neue", sans-serif;
-    font-size: 16px;
     color: white;
     text-decoration: none;
+    font-size: 24px;
+    transition: color 0.5s ease;
+}
+
+.head a:hover {
+    color: aqua;
 }
 
 .container p {
     color: white;
+}
+
+.container.presentation {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.container.presentation div.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.container.presentation img {
+    align-self: center;
+    width: 35%;
+    padding-right: 60px
 }
