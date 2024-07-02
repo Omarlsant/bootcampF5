@@ -1,77 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-body {
-    background-color: #202A64;
+html {
+    scroll-behavior: smooth;
 }
 
-.container.head nav {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #1c1e53;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #5e3bee !important;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+li {
+    list-style: none;
+}
+
+nav {
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    padding: 0 85px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
-.container.head nav a[href="#home"] {
-    flex-grow: 1;
-    margin-left: 10px;
+nav .logo img {
+    width: 40px;
+    height: 35px;
 }
 
-.container.head nav a {
-    margin-right: 25px;
-}
 
-.container.head nav {
-    display: flex;
-    justify-content: flex-end;
-}
 
-.container h1, h2, h3 {
-    font-family: "Bebas Neue", sans-serif;
-    color: white;
-    letter-spacing: 1.1px;
-}
 
-.container img {
-    width: 250px;
-    height: 350px;
-}
 
-.container p {
-    font-family: "Open Sans", sans-serif;
-}
 
-.head a {
-    font-family: "Bebas Neue", sans-serif;
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-    transition: color 0.5s ease;
-}
-
-.head a:hover {
-    color: aqua;
-}
-
-.container p {
-    color: white;
-}
-
-.container.presentation {
-    display: flex;
-    justify-content: space-around;
-    padding: 40px;
-    width: fit-content;
-    height: fit-content;
-}
-
-.container.presentation div.content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-}
-
-.container.presentation img {
-    align-self: center;
-    width: 35%;
-    padding-right: 60px
-}
