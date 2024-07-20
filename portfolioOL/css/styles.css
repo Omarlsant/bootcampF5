@@ -222,22 +222,6 @@ nav button#menuButton {
     margin-bottom: 60px;
 }
 
-.portfolio .header button {
-    background-color: #ff0000;
-    padding: 10px 20px;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    gap: 8px;
-    border: none;
-    border-radius: 10px;
-}
-
-.portfolio .header button i {
-    font-size: 26px;
-}
-
 .portfolio .portfo-items {
     display: flex;
     align-items: center;
