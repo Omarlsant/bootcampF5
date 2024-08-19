@@ -1,0 +1,16 @@
+{
+    "pokemons": [
+        {"id": 1, "level": 5, "name": "Bulbasaur", "type": "Grass/Poison"},
+        {"id": 2, "level": 5, "name": "Charmander", "type": "Fire"},
+        {"id": 3, "level": 5, "name": "Squirtle", "type": "Water"},
+        {"id": 4, "level": 29, "name": "Pikachu", "type": "Electric"},
+        {"id": 5, "level": 10, "name": "Jigglypuff", "type": "Normal/Fairy"},
+        {"id": 6, "level": 8, "name": "Geodude", "type": "Rock/Ground"},
+        {"id": 7, "level": 27, "name": "Slowpoke", "type": "Water/Psychic"},
+        {"id": 8, "level": 12, "name": "Magnemite", "type": "Electric/Steel"},
+        {"id": 9, "level": 20, "name": "Gastly", "type": "Ghost/Poison"},
+        {"id": 10, "level": 10, "name": "Onix", "type": "Rock/Ground"},
+        {"id": 11, "level": 10, "name": "Krabby", "type": "Water"},
+        {"id": 12, "level": 20, "name": "Voltorb", "type": "Electric"}
+    ]
+}
