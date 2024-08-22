@@ -8,7 +8,15 @@
 </head>
 <body>
     <h1>Zoológico</h1>
-    <input type="text" id="buscador" placeholder="Buscar animal...">
+    <button id="boton-crear">Crear Animal</button>
+    <form id="formulario-animal">
+        <input type="text" id="nombre" placeholder="Nombre del animal">
+        <input type="text" id="dieta" placeholder="Dieta del animal">
+        <input type="number" id="edad" placeholder="Edad del animal">
+        <input type="checkbox" id="alimentado" > Alimentado
+        <button type="submit">Agregar animal</button>
+        <button type="button" id="boton-cancelar">Cancelar</button>
+    </form>
     <table id="tabla-animales">
         <tr>
             <th>Name</th>

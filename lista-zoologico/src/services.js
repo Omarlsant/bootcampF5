@@ -1,18 +1,52 @@
-// services.js
-
-// URL de nuestra Api simulada
 const baseUrl = "http://localhost:3000/zoo";
 
-// READ - Obtener todos los animales
+// Almacenar los elementos en variables
+const formulario = document.getElementById('formulario-animal');
+const nombreInput = document.getElementById('nombre');
+const dietaInput = document.getElementById('dieta');
+const edadInput = document.getElementById('edad');
+const alimentadoInput = document.getElementById('alimentado');
+const botonCrear = document.getElementById('boton-crear');
+const botonCancelar = document.getElementById('boton-cancelar');
+const tabla = document.getElementById("tabla-animales");
+
+formulario.addEventListener('submit', async function(event) {
+    event.preventDefault();
+    const nombre = nombreInput.value;
+    const dieta = dietaInput.value;
+    const edad = edadInput.value;
+    const alimentado = alimentadoInput.checked;
+    const nuevoAnimal = {
+        name: nombre,
+        diet: dieta,
+        age: edad,
+        feeded: alimentado
+    };
+    try {
+        await createAnimal(nuevoAnimal);
+        getAnimals().then(renderAnimals);
+    } catch (error) {
+        console.error('Ha ocurrido un error:', error);
+    }
+});
+
+botonCrear.addEventListener('click', function() {
+    formulario.style.display = 'block'; // Muestra el formulario
+});
+
+botonCancelar.addEventListener('click', function() {
+    formulario.style.display = 'none'; // Oculta el formulario
+});
+
 async function getAnimals() {
 	const response = await fetch(baseUrl, {
-		method: "GET", // Método HTTP GET para obtener datos
-		headers: {
-			"Content-Type": "application/json", // Indica que estamos trabajando con JSON
-		},
-	});
-	const animals = await response.json(); // Convierte la respuesta en un objeto JSON
-	return animals; // Retorna la lista de animales obtenida
+		method: "GET",
+        headers: {
+			"Content-Type": "application/json",
+        },
+    });
+	const animals = await response.json();
+    return animals;
 }
 
 // Obtener animal por id
@@ -43,7 +77,6 @@ async function createAnimal(animal) {
 async function updateAnimal(id) {
 	const animal = await getAnimalById(id); // Obtiene el animal por su ID
 	animal.feeded = !animal.feeded; // Invierte el estado de "feeded"
-
 	const response = await fetch(`${baseUrl}/${id}`, {
 		method: "PUT",
 		headers: {
@@ -77,8 +110,6 @@ async function deleteAnimal(id) {
 
 // Función para mostrar los animales en el html
 function renderAnimals(animals) {
-	const tabla = document.getElementById("tabla-animales");
-
 	// Limpiar la tabla existente, excepto la fila de encabezado
 	while (tabla.rows.length > 1) {
 		tabla.deleteRow(1);

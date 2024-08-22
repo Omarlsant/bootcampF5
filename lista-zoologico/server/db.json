@@ -68,21 +68,7 @@
       "name": "Mono",
       "diet": "omnívoro",
       "age": 4,
-      "feeded": false
-    },
-    {
-      "id": "11",
-      "name": "Serpiente",
-      "diet": "carnivoro",
-      "age": 5,
-      "feeded": false
-    },
-    {
-      "id": "12",
-      "name": "Tortuga",
-      "diet": "herbívoro",
-      "age": 100,
-      "feeded": false
+      "feeded": true
     }
   ]
 }

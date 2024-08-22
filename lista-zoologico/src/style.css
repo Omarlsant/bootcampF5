@@ -1,8 +1,26 @@
-/* style.css */
+h1 {
+    text-align: center;
+}
+
+#formulario-animal {
+    display: none;
+}
+
+form#formulario-animal {
+   padding: 20px 20px 10px 20px;
+}
+
+button#boton-crear {
+    margin: 20px;
+}
 
 table {
     margin: 20px;
     border-collapse: collapse;
+}
+
+input#buscador {
+    margin-left: 20px;
 }
 
 td, th {
