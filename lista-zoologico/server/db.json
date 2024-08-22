@@ -1,0 +1,88 @@
+{
+  "zoo": [
+    {
+      "id": "1",
+      "name": "León",
+      "diet": "carnivoro",
+      "age": 5,
+      "feeded": false
+    },
+    {
+      "id": "2",
+      "name": "Pinguino",
+      "diet": "omnívoro",
+      "age": 3,
+      "feeded": false
+    },
+    {
+      "id": "3",
+      "name": "Elefante",
+      "diet": "herbívoro",
+      "age": 10,
+      "feeded": false
+    },
+    {
+      "id": "4",
+      "name": "Loro",
+      "diet": "omnívoro",
+      "age": 3,
+      "feeded": false
+    },
+    {
+      "id": "5",
+      "name": "Jirafa",
+      "diet": "herbívoro",
+      "age": 10,
+      "feeded": false
+    },
+    {
+      "id": "6",
+      "name": "Cocodrilo",
+      "diet": "carnivoro",
+      "age": 7,
+      "feeded": false
+    },
+    {
+      "id": "7",
+      "name": "Koala",
+      "diet": "herbívoro",
+      "age": 6,
+      "feeded": false
+    },
+    {
+      "id": "8",
+      "name": "Canguro",
+      "diet": "herbívoro",
+      "age": 5,
+      "feeded": false
+    },
+    {
+      "id": "9",
+      "name": "Oso",
+      "diet": "omnívoro",
+      "age": 10,
+      "feeded": false
+    },
+    {
+      "id": "10",
+      "name": "Mono",
+      "diet": "omnívoro",
+      "age": 4,
+      "feeded": false
+    },
+    {
+      "id": "11",
+      "name": "Serpiente",
+      "diet": "carnivoro",
+      "age": 5,
+      "feeded": false
+    },
+    {
+      "id": "12",
+      "name": "Tortuga",
+      "diet": "herbívoro",
+      "age": 100,
+      "feeded": false
+    }
+  ]
+}
