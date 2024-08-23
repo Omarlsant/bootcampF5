@@ -16,6 +16,21 @@ formulario.addEventListener('submit', async function(event) {
     const dieta = dietaInput.value;
     const edad = edadInput.value;
     const alimentado = alimentadoInput.checked;
+
+    // Validación de los campos
+    if (!nombre) {
+        alert("No se ha colocado ningún nombre");
+        return;
+    }
+    if (!dieta) {
+        alert("No se ha colocado ninguna dieta");
+        return;
+    }
+    if (!edad) {
+        alert("No se ha colocado ninguna edad");
+        return;
+    }
+
     const nuevoAnimal = {
         name: nombre,
         diet: dieta,
@@ -24,14 +39,19 @@ formulario.addEventListener('submit', async function(event) {
     };
     try {
         await createAnimal(nuevoAnimal);
-        getAnimals().then(renderAnimals);
+        const animals = await getAnimals();
+        renderAnimals(animals);
     } catch (error) {
         console.error('Ha ocurrido un error:', error);
     }
 });
 
 botonCrear.addEventListener('click', function() {
-    formulario.style.display = 'block'; // Muestra el formulario
+    if (formulario.style.display === 'block') {
+        alert("El formulario está desplegado, crea a tu animal");
+    } else {
+        formulario.style.display = 'block'; // Muestra el formulario
+    }
 });
 
 botonCancelar.addEventListener('click', function() {
@@ -67,7 +87,8 @@ async function createAnimal(animal) {
 	});
 
 	if (response.ok) {
-		getAnimals();
+		localStorage.setItem('message', 'El animal ha sido agregado con éxito');
+		location.reload();
 	} else {
 		console.error("Error al agregar el animal");
 	}
@@ -102,7 +123,8 @@ async function deleteAnimal(id) {
 	});
 
 	if (response.ok) {
-		getAnimals();
+		localStorage.setItem('message', 'El animal ha sido eliminado');
+		location.reload();
 	} else {
 		console.error("Error al eliminar el animal");
 	}
@@ -156,6 +178,17 @@ function renderAnimals(animals) {
 		if (animal.feeded) {
 			celdaNombre.classList.add('feeded');
 		}
+	}
+}
+
+// Mostrar el mensaje después de que la página se recargue
+window.onload = function() {
+	const message = localStorage.getItem('message');
+	if (message) {
+		setTimeout(() => {
+			alert(message);
+			localStorage.removeItem('message'); // Eliminar el mensaje después de mostrarlo
+		}, 500);
 	}
 }
 

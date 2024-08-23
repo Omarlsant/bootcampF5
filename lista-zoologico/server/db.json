@@ -68,7 +68,21 @@
       "name": "Mono",
       "diet": "omnívoro",
       "age": 4,
-      "feeded": true
+      "feeded": false
+    },
+    {
+      "id": "bca5",
+      "name": "Rinoceronte",
+      "diet": "hervíboro",
+      "age": "7",
+      "feeded": false
+    },
+    {
+      "id": "c19f",
+      "name": "Gorila",
+      "diet": "omnívoro",
+      "age": "3",
+      "feeded": false
     }
   ]
 }

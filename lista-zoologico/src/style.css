@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
 h1 {
     text-align: center;
 }
@@ -10,13 +16,30 @@ form#formulario-animal {
    padding: 20px 20px 10px 20px;
 }
 
+#formulario-animal button {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#formulario-animal input {
+    margin: 10px;
+}
+
 button#boton-crear {
     margin: 20px;
+    padding: 10px;
+    border-radius: 15px;
 }
 
 table {
     margin: 20px;
     border-collapse: collapse;
+}
+
+table button {
+    border-radius: 15px;
+    padding: 10px;
 }
 
 input#buscador {
