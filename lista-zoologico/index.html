@@ -4,27 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/style.css">
-    <title>Document</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <title>Base de Datos: Zoológico</title>
 </head>
 <body>
-    <h1>Zoológico</h1>
-    <button id="boton-crear">Crear Animal</button>
-    <form id="formulario-animal">
-        <input type="text" id="nombre" placeholder="Nombre del animal">
-        <input type="text" id="dieta" placeholder="Dieta del animal">
-        <input type="number" id="edad" placeholder="Edad del animal">
-        <input type="checkbox" id="alimentado" > Alimentado
-        <button type="submit">Agregar animal</button>
-        <button type="button" id="boton-cancelar">Cancelar</button>
-    </form>
+    <header>
+        <h1>Zoológico</h1>
+    </header>
+    <div class="container-create">
+        <button id="boton-crear">Crear Animal</button>
+        <form id="formulario-animal">
+            <input type="text" id="nombre" placeholder="Nombre del Animal">
+            <input type="text" id="dieta" placeholder="Dieta del Animal">
+            <input type="number" id="edad" placeholder="Edad del Animal">
+            <input type="checkbox" id="alimentado" > Alimentado
+            <button type="submit">Agregar Animal</button>
+            <button type="button" id="boton-cancelar">Cancelar</button>
+        </form>
+    </div>
+    
     <table id="tabla-animales">
         <tr>
-            <th>Name</th>
-            <th>Diet</th>
-            <th>Age</th>
-            <th>Feeded?</th>
+            <th>Nombre</th>
+            <th>Dieta</th>
+            <th>Edad</th>
+            <th>¿Alimentado?</th>
         </tr>
     </table>
+    <footer>
+        2024, Todos los derechos reservados |  Hecho con ❤️ el proyecto de CRUD
+    </footer>
     <script src="/src/services.js"></script>
 </body>
 </html>

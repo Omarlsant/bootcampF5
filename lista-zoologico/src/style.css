@@ -1,54 +1,123 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+/* Restablecer los márgenes predeterminados */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Variables CSS */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #37823b;
+    --background-color: #f4f4f9;
+    --text-color: #333;
+    --border-color: #ddd;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+    --padding: 10px;
+    --margin: 20px;
+}
 
 body {
     font-family: "Lato", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: var(--primary-color);
+    padding: 40px 20px;
+    text-align: center;
 }
 
 h1 {
     text-align: center;
+    color: black;
+}
+
+.container-create {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: var(--margin);
+}
+
+.container-create button,
+#formulario-animal button,
+table button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    padding: var(--padding) 20px;
+    margin: 15px 10px 15px 10px;
+}
+
+.container-create button:hover,
+#formulario-animal button:hover,
+table button:hover {
+    background-color: var(--secondary-color);
 }
 
 #formulario-animal {
     display: none;
+    width: 95%;
+    display: flex;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
-form#formulario-animal {
-   padding: 20px 20px 10px 20px;
-}
-
-#formulario-animal button {
-    margin: 10px;
-    padding: 5px;
-    border-radius: 10px;
+.container-create form {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
 }
 
 #formulario-animal input {
-    margin: 10px;
+    margin: var(--padding);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 150px;
 }
 
-button#boton-crear {
-    margin: 20px;
-    padding: 10px;
-    border-radius: 15px;
+#formulario-animal input#alimentado {
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50px;
 }
 
 table {
-    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--margin) auto;
     border-collapse: collapse;
-}
-
-table button {
-    border-radius: 15px;
-    padding: 10px;
-}
-
-input#buscador {
-    margin-left: 20px;
+    width: 80%;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    text-align: center;
 }
 
 td, th {
-    border: 1px solid #ddd;
-    padding: 20px 30px 20px 30px;
+    border: 1px solid var(--border-color);
+    padding: 5px 15px;
+}
+
+th {
+    background-color: var(--primary-color);
+    font-size: 22px;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
 }
 
 .feeded {

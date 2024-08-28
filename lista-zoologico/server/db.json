@@ -1,20 +1,6 @@
 {
   "zoo": [
     {
-      "id": "1",
-      "name": "León",
-      "diet": "carnivoro",
-      "age": 5,
-      "feeded": false
-    },
-    {
-      "id": "2",
-      "name": "Pinguino",
-      "diet": "omnívoro",
-      "age": 3,
-      "feeded": false
-    },
-    {
       "id": "3",
       "name": "Elefante",
       "diet": "herbívoro",
@@ -64,24 +50,31 @@
       "feeded": false
     },
     {
-      "id": "10",
-      "name": "Mono",
-      "diet": "omnívoro",
-      "age": 4,
+      "id": "d079",
+      "name": "Jaguar",
+      "diet": "carnivoro",
+      "age": "5",
       "feeded": false
     },
     {
-      "id": "bca5",
+      "name": "Tucán",
+      "diet": "omnívoro",
+      "age": "2",
+      "feeded": false,
+      "id": "5ab6"
+    },
+    {
+      "id": "6654",
+      "name": "León",
+      "diet": "carnivoro",
+      "age": "8",
+      "feeded": false
+    },
+    {
+      "id": "db4d",
       "name": "Rinoceronte",
       "diet": "hervíboro",
-      "age": "7",
-      "feeded": false
-    },
-    {
-      "id": "c19f",
-      "name": "Gorila",
-      "diet": "omnívoro",
-      "age": "3",
+      "age": "11",
       "feeded": false
     }
   ]

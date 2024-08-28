@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3000/zoo";
+const URL_API = "http://localhost:3000/zoo";
 
 // Almacenar los elementos en variables
 const formulario = document.getElementById('formulario-animal');
@@ -9,6 +9,27 @@ const alimentadoInput = document.getElementById('alimentado');
 const botonCrear = document.getElementById('boton-crear');
 const botonCancelar = document.getElementById('boton-cancelar');
 const tabla = document.getElementById("tabla-animales");
+
+let editMode = false;
+let editAnimalId = null;
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Ocultar el formulario al cargar la página
+    formulario.style.display = 'none';
+
+    // Mostrar el formulario al hacer clic en el botón "Crear Animal"
+    botonCrear.addEventListener('click', function() {
+        formulario.style.display = 'block';
+        editMode = false;
+        formulario.reset();
+    });
+
+    // Ocultar el formulario al hacer clic en el botón "Cancelar"
+    botonCancelar.addEventListener('click', function() {
+        formulario.style.display = 'none';
+        formulario.reset();
+    });
+});
 
 formulario.addEventListener('submit', async function(event) {
     event.preventDefault();
@@ -31,35 +52,30 @@ formulario.addEventListener('submit', async function(event) {
         return;
     }
 
-    const nuevoAnimal = {
+    const animal = {
         name: nombre,
         diet: dieta,
         age: edad,
         feeded: alimentado
     };
+
     try {
-        await createAnimal(nuevoAnimal);
+        if (editMode) {
+            await updateAnimal(editAnimalId, animal);
+        } else {
+            await createAnimal(animal);
+        }
         const animals = await getAnimals();
         renderAnimals(animals);
+        formulario.style.display = 'none';
+        formulario.reset();
     } catch (error) {
         console.error('Ha ocurrido un error:', error);
     }
 });
 
-botonCrear.addEventListener('click', function() {
-    if (formulario.style.display === 'block') {
-        alert("El formulario está desplegado, crea a tu animal");
-    } else {
-        formulario.style.display = 'block'; // Muestra el formulario
-    }
-});
-
-botonCancelar.addEventListener('click', function() {
-    formulario.style.display = 'none'; // Oculta el formulario
-});
-
 async function getAnimals() {
-	const response = await fetch(baseUrl, {
+	const response = await fetch(URL_API, {
 		method: "GET",
         headers: {
 			"Content-Type": "application/json",
@@ -71,14 +87,14 @@ async function getAnimals() {
 
 // Obtener animal por id
 async function getAnimalById(id) {
-	const response = await fetch(`${baseUrl}/${id}`);
+	const response = await fetch(`${URL_API}/${id}`);
 	const animal = await response.json();
 	return animal;
 }
 
 // CREATE - Crear un nuevo animal
 async function createAnimal(animal) {
-	const response = await fetch(baseUrl, {
+	const response = await fetch(URL_API, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -94,20 +110,20 @@ async function createAnimal(animal) {
 	}
 }
 
-// UPDATE - Actualizar el estado "feeded"
-async function updateAnimal(id) {
-	const animal = await getAnimalById(id); // Obtiene el animal por su ID
-	animal.feeded = !animal.feeded; // Invierte el estado de "feeded"
-	const response = await fetch(`${baseUrl}/${id}`, {
+// UPDATE - Actualizar el animal
+async function updateAnimal(id, updatedAnimal) {
+	const response = await fetch(`${URL_API}/${id}`, {
 		method: "PUT",
 		headers: {
 			"Content-Type": "application/json",
 		},
-		body: JSON.stringify(animal),
+		body: JSON.stringify(updatedAnimal),
 	});
 
 	if (response.ok) { // Si la actualización fue exitosa, recarga la lista de animales
-		getAnimals();
+		getAnimals().then(renderAnimals);
+        localStorage.setItem('message', 'El animal ha sido actualizado');
+        location.reload(); // Recargar la página
 	} else {
 		console.error("Error al actualizar el animal"); // Si ocurrió un error, lo muestra en la consola
 	}
@@ -115,7 +131,7 @@ async function updateAnimal(id) {
 
 // DELETE - Eliminar un animal
 async function deleteAnimal(id) {
-	const response = await fetch(`${baseUrl}/${id}`, {
+	const response = await fetch(`${URL_API}/${id}`, {
 		method: "DELETE",
 		headers: {
 			"Content-Type": "application/json",
@@ -151,26 +167,44 @@ function renderAnimals(animals) {
 
 		const celdaAlimentado = fila.insertCell(3);
 		const botonAlimentado = document.createElement('button');
-		botonAlimentado.textContent = 'Alimentado';
+		botonAlimentado.textContent = 'Alimentar';
 		botonAlimentado.addEventListener('click', async () => {
 			try {
-				await updateAnimal(animal.id);
-				getAnimals().then(renderAnimals);
+				await updateAnimal(animal.id, { ...animal, feeded: true });
+				location.getAnimals().then(renderAnimals);
 			} catch (error) {
 				console.error('Ha ocurrido un error:', error);
 			}
 		});
 		celdaAlimentado.appendChild(botonAlimentado);
 
-		const celdaEliminar = fila.insertCell(4);
+        // Agregar botón de Editar para cambiar el nombre, dieta y edad del animal
+        const celdaEditar = fila.insertCell(4);
+        const botonEditar = document.createElement('button');
+		botonEditar.textContent = 'Editar';
+		botonEditar.addEventListener('click', () => {
+            nombreInput.value = animal.name;
+            dietaInput.value = animal.diet;
+            edadInput.value = animal.age;
+            alimentadoInput.checked = animal.feeded;
+            formulario.style.display = 'block';
+            editMode = true;
+            editAnimalId = animal.id;
+        });
+		celdaEditar.appendChild(botonEditar);
+
+		const celdaEliminar = fila.insertCell(5);
 		const botonEliminar = document.createElement('button');
 		botonEliminar.textContent = 'Eliminar';
 		botonEliminar.addEventListener('click', async () => {
-			try {
-				await deleteAnimal(animal.id);
-				getAnimals().then(renderAnimals);
-			} catch (error) {
-				console.error('Ha ocurrido un error:', error);
+			const confirmacion = confirm("¿Estás seguro de querer eliminar al animal?");
+			if (confirmacion) {
+				try {
+					await deleteAnimal(animal.id);
+					getAnimals().then(renderAnimals);
+				} catch (error) {
+					console.error('Ha ocurrido un error:', error);
+				}
 			}
 		});
 		celdaEliminar.appendChild(botonEliminar);
@@ -188,7 +222,7 @@ window.onload = function() {
 		setTimeout(() => {
 			alert(message);
 			localStorage.removeItem('message'); // Eliminar el mensaje después de mostrarlo
-		}, 500);
+		}, 400);
 	}
 }
 
