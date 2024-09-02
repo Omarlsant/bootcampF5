@@ -1,81 +1,74 @@
 {
   "zoo": [
     {
-      "id": "3",
+      "id": "1",
       "name": "Elefante",
       "diet": "herbívoro",
       "age": 10,
       "feeded": false
     },
     {
-      "id": "4",
+      "id": "2",
       "name": "Loro",
       "diet": "omnívoro",
       "age": 3,
       "feeded": false
     },
     {
-      "id": "5",
+      "id": "3",
       "name": "Jirafa",
       "diet": "herbívoro",
       "age": 10,
       "feeded": false
     },
     {
-      "id": "6",
+      "id": "4",
       "name": "Cocodrilo",
       "diet": "carnivoro",
       "age": 7,
       "feeded": false
     },
     {
-      "id": "7",
+      "id": "5",
       "name": "Koala",
       "diet": "herbívoro",
       "age": 6,
       "feeded": false
     },
     {
-      "id": "8",
+      "id": "6",
       "name": "Canguro",
       "diet": "herbívoro",
       "age": 5,
       "feeded": false
     },
     {
-      "id": "9",
+      "id": "7",
       "name": "Oso",
       "diet": "omnívoro",
       "age": 10,
       "feeded": false
     },
     {
-      "id": "d079",
+      "id": "8",
       "name": "Jaguar",
       "diet": "carnivoro",
       "age": "5",
       "feeded": false
     },
     {
+      "id": "9",
       "name": "Tucán",
       "diet": "omnívoro",
       "age": "2",
-      "feeded": false,
-      "id": "5ab6"
+      "feeded": false
     },
     {
-      "id": "6654",
+      "id": "10",
       "name": "León",
       "diet": "carnivoro",
       "age": "8",
-      "feeded": false
-    },
-    {
-      "id": "db4d",
-      "name": "Rinoceronte",
-      "diet": "hervíboro",
-      "age": "11",
-      "feeded": false
+      "feeded": true
     }
   ]
 }
