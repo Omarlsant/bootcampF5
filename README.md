@@ -8,10 +8,16 @@ Aquí encontrarás una variedad de proyectos en los que he estado trabajando. De
 
 - Box Puzzle
 - My portfolio
+- Base de Datos Json
+- Proyecto de CRUD
+- Ejercicios prácticos
 
-## Tecnologías utilizadas 06-JUL
+
+## Tecnologías utilizadas - Septiembre
 - HTML/CSS
 - JavaScript
+- Json server
+- React
 
 ## Contacto
 Si tienes alguna pregunta o simplemente quieres charlar sobre desarrollo web, no dudes en contactarme. ¡Estoy ansioso por compartir y aprender juntos!
